@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>H.E.E. Floor 4 Archives Vending Unit</title>
+<style>
+body{margin:0;background:#111;color:#8cff8c;font-family:Consolas,monospace;text-align:center}
+#box{width:850px;margin:25px auto;background:#222;border:4px solid #4caf50;padding:20px}
+h1{margin:0}
+#grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px}
+button{padding:12px;background:#2c2c2c;color:#8cff8c;border:1px solid #6f6;cursor:pointer;font-family:inherit}
+button:hover{background:#7cff7c;color:#000}
+#screen{margin-top:18px;background:#000;border:2px solid #6f6;min-height:170px;padding:15px;white-space:pre-wrap;text-align:left}
+small{color:#888}
+</style>
+</head>
+<body>
+
+<div id="box">
+
+<h1>H.E.E. FLOOR 4 ARCHIVES VENDING UNIT</h1>
+<p>Property of Records & Documentation</p>
+
+<div id="grid">
+<button onclick="show('coffee')">A1 Groovy Coffee</button>
+<button onclick="show('book')">A2 Bookmarks</button>
+<button onclick="show('mints')">A3 Neuralyzer Mints</button>
+<button onclick="show('cookies')">A4 Archive Cookies</button>
+
+<button onclick="show('peach')">B1 Canned Peaches</button>
+<button onclick="show('brick')">B2 Brick Bar</button>
+<button onclick="show('battery')">B3 Firefly Batteries</button>
+<button onclick="show('idol')">B4 Idol Chocolate</button>
+
+<button onclick="show('gum')">C1 Fifth Dimension Gum</button>
+<button onclick="show('mix')">C2 Trust No One Mix</button>
+<button onclick="show('coffee2')">C3 Redacted Coffee</button>
+<button onclick="show('mushroom')">C4 Mushroom Soup</button>
+
+<button onclick="show('oil')">D1 Chainsaw Oil</button>
+<button onclick="show('horse')">D2 Horse Treats</button>
+<button onclick="show('journal')">D3 Journal #4</button>
+<button onclick="show('secret')">D4 ???</button>
+</div>
+
+<div id="screen">
+WELCOME TO FLOOR 4
+
+Archives Department
+
+Please return borrowed files.
+
+Please return borrowed memories.
+</div>
+
+<small>Machine Serial: ARC-404</small>
+
+</div>
+
+<script>
+
+const items={
+
+coffee:`GROOVY COFFEE
+
+Extremely strong.
+
+Please do not read
+mysterious books aloud.`,
+
+book:`NECRONOMICON
+BOOKMARKS
+
+Safe.
+
+As long as they stay
+inside the book.`,
+
+mints:`NEURALYZER MINTS
+
+Forget bad breath.
+
+Maybe a little more.`,
+
+cookies:`ARCHIVE COOKIES
+
+Baked in 1998.
+
+Still fresh.
+
+Somehow.`,
+
+peach:`CANNED PEACHES
+
+A favorite among
+certain cowboys.
+
+Simple.
+Reliable.
+Delicious.`,
+
+brick:`BRICK BAR
+
+Throwing not required.
+
+Pairs well with
+bottles.`,
+
+battery:`FIREFLY BATTERIES
+
+Keep your flashlight
+running a little longer.
+
+Look for the light.`,
+
+idol:`GOLDEN IDOL
+CHOCOLATE
+
+Please replace with
+equal weight chocolate.`,
+
+gum:`FIFTH DIMENSION GUM
+
+Flavor changes every
+few chews.
+
+Reality might too.`,
+
+mix:`TRUST NO ONE
+TRAIL MIX
+
+Contains peanuts.
+
+Probably.`,
+
+coffee2:`REDACTED COFFEE
+
+████████████
+
+Best seller on
+Floor 4.`,
+
+mushroom:`CORDYCEPS-FREE
+MUSHROOM SOUP
+
+The label insists
+it is completely safe.`,
+
+oil:`CHAINSAW OIL
+
+Not a beverage.
+
+Seriously.`,
+
+horse:`HORSE TREATS
+
+If your horse is
+inside the facility,
+
+please fill out
+Form 12-C.`,
+
+journal:`JOURNAL #4
+
+Blank pages.
+
+Except page 47.
+
+Nobody wrote on it.
+
+Nobody.`,
+
+secret:`ACCESS DENIED
+
+Enter Archive Code:
+1985`
+
+};
+
+function show(i){
+screen.textContent=items[i];
+}
+
+const msgs=[
+"Reminder: Return VHS Tape #18.",
+"Please stop alphabetizing the alphabet.",
+"Someone borrowed File ███ again.",
+"Gravity Falls souvenirs are not official evidence.",
+"The archives have misplaced another archive.",
+"Report unusual mushrooms to Botany.",
+"Please stop throwing bricks at the vending machine.",
+"Chainsaw Oil is NOT coffee creamer.",
+"Who parked a horse in Loading Bay C?",
+"Ghost sightings remain unconfirmed.",
+"Today's mystery file has gone missing.",
+"The X-Files are not on Floor X.",
+"Employee 42 still owes $2.00.",
+"Journal #4 is missing page 13.",
+"Indiana from Shipping wants his hat back.",
+"Remember: curiosity is encouraged. Touching everything is not.",
+"Records indicate this machine has existed longer than the building.",
+"Coffee inventory: concerningly low.",
+"Today's weather: indoors.",
+"Have a productive shift."
+];
+
+setInterval(()=>{
+if(Math.random()<0.4){
+screen.textContent=msgs[Math.floor(Math.random()*msgs.length)];
+}
+},7000);
+
+let code="";
+
+document.addEventListener("keydown",e=>{
+code+=e.key;
+if(code.length>4)code=code.slice(-4);
+
+if(code==="1985"){
+screen.textContent=
+`ARCHIVE STORAGE
+
+SECRET MENU
+
+• Old VHS Tape
+
+• Mystery Key
+
+• Flashlight
+
+• "Definitely Normal"
+Cassette
+
+• Employee Survival Kit
+
+STATUS:
+Limited Supply`;
+}
+});
+
+</script>
+
+</body>
+</html>
