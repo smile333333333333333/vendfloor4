@@ -242,3 +242,113 @@ Limited Supply`;
 
 </body>
 </html>
+</script>
+
+</body>
+</html>
+
+"Please stop alphabetizing the alphabet.",
+
+"Employee #42 still owes the machine $2.00.",
+
+"Reminder: Do not feed the archives.",
+
+"Ghost sightings remain unconfirmed.",
+
+"Archive Room B has been organized. Nobody admits doing it.",
+
+"Today's weather: still indoors.",
+
+"Indiana from Shipping wants his hat back.",
+
+"The vending machine won Employee of the Month.",
+
+"Please stop asking if we sell cursed books.",
+
+"Maintenance requests fewer dramatic exits.",
+
+"Today's special: Existing."
+
+];
+
+setInterval(function(){
+
+if(Math.random()<0.35){
+
+document.getElementById("screen").textContent=
+announcements[Math.floor(Math.random()*announcements.length)];
+
+}
+
+},7000);
+
+let code="";
+
+document.addEventListener("keydown",function(e){
+
+code+=e.key;
+
+if(code.length>4){
+
+code=code.slice(-4);
+
+}
+
+if(code==="1985"){
+
+document.getElementById("screen").textContent=
+
+`ARCHIVE STORAGE
+
+*** SECRET MENU ***
+
+A1 - VHS Tape
+"Definitely Normal."
+
+A2 - Mystery Key
+Nobody knows
+what it opens.
+
+A3 - Emergency Flashlight
+Batteries included.
+Hopefully.
+
+A4 - Cowboy Coffee
+Guaranteed to make
+you feel ready for
+a long trail ride.
+
+B1 - Tiny Ghost Trap
+No warranty.
+
+B2 - Brick Deluxe
+Still just a brick.
+
+B3 - Employee Survival Kit
+Contains:
+
+• Bandage
+• Flashlight
+• Granola Bar
+• Rubber Duck
+
+B4 - Cursed Bookmark
+
+Please don't ask
+where it came from.
+
+STATUS:
+LIMITED STOCK`;
+
+}
+
+});
+
+document.getElementById("screen").textContent+=
+
+"\n\nMachine Status: READY";
+
+</script>
+
+</body>
+</html>
